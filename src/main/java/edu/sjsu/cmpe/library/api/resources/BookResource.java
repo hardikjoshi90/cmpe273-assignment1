@@ -1,6 +1,5 @@
 package edu.sjsu.cmpe.library.api.resources;
 
-import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
@@ -40,7 +39,7 @@ public class BookResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
 	
-    public Response createBook(@Valid Book book)
+    public Response createBook(Book book)
 	{
 		LinksDto createBooklinkResponse = new LinksDto();
 		bookRepositroryMap.put(isbnId,book);
