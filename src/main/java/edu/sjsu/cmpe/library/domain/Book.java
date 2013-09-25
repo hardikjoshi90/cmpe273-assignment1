@@ -1,15 +1,11 @@
 package edu.sjsu.cmpe.library.domain;
 
 import java.util.ArrayList;
-import org.hibernate.validator.constraints.NotEmpty;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.yammer.dropwizard.validation.ValidationMethod;
 
 
 public class Book {
-	@JsonProperty
-	@NotEmpty
+	
     private long isbn;
     private String title;
     @JsonProperty("publication-date") private String publicationDate;
@@ -18,15 +14,8 @@ public class Book {
     private String status;    
     private ArrayList<Author> authors= new ArrayList<Author>();
     private ArrayList<Review> reviews = new ArrayList<Review>() ;
-    
-    @ValidationMethod(message="title can't be blank")
-    
-    public boolean isNotCoda() {
-        return !("Coda".equals(title));
-    }
-    
-    
-	public ArrayList<Review> getReviews() {
+   
+    public ArrayList<Review> getReviews() {
 		return reviews;
 	}
 	public void setReviews(ArrayList<Review> reviews) {
